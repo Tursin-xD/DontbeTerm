@@ -1,6 +1,8 @@
-# DontbeTerm
-
-多标签终端管理器，专为 Claude Code 设计，支持 AI 智能标签命名。
+<div align="center">
+  <img src="icon.png" alt="DontbeTerm Icon" width="128" height="128">
+  <h1>DontbeTerm</h1>
+  <p>多标签终端管理器，专为 Claude Code 设计，支持 AI 智能标签命名。</p>
+</div>
 
 DontbeTerm 让你同时运行多个 Claude Code 会话，并通过 AI 自动识别每个对话的主题来命名标签页。
 
