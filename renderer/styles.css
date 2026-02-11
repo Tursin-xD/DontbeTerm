@@ -1,0 +1,425 @@
+/* Apple macOS Design System */
+:root {
+  /* macOS System Colors - Dark Mode */
+  --bg-primary: #1e1e1e;
+  --bg-secondary: #2d2d2d;
+  --bg-tertiary: #3a3a3a;
+  --bg-sidebar: rgba(40, 40, 40, 0.95);
+  --bg-toolbar: rgba(30, 30, 30, 0.8);
+  --text-primary: rgba(255, 255, 255, 0.85);
+  --text-secondary: rgba(255, 255, 255, 0.55);
+  --text-tertiary: rgba(255, 255, 255, 0.25);
+  --accent: #007AFF;
+  --accent-hover: #0051D5;
+  --border: rgba(255, 255, 255, 0.1);
+  --separator: rgba(255, 255, 255, 0.08);
+  --hover: rgba(255, 255, 255, 0.08);
+  --active: rgba(255, 255, 255, 0.12);
+  --danger: #FF3B30;
+  --success: #34C759;
+  --warning: #FF9500;
+  --modal-overlay: rgba(0, 0, 0, 0.5);
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5);
+
+  /* Spacing (8pt grid) */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+  --radius-xl: 12px;
+  --radius-full: 50%;
+}
+
+/* Light Mode - macOS System Colors */
+body.light {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f5f5f7;
+  --bg-tertiary: #e8e8ed;
+  --bg-sidebar: rgba(245, 245, 247, 0.95);
+  --bg-toolbar: rgba(255, 255, 255, 0.8);
+  --text-primary: rgba(0, 0, 0, 0.85);
+  --text-secondary: rgba(0, 0, 0, 0.55);
+  --text-tertiary: rgba(0, 0, 0, 0.25);
+  --accent: #007AFF;
+  --accent-hover: #0051D5;
+  --border: rgba(0, 0, 0, 0.1);
+  --separator: rgba(0, 0, 0, 0.08);
+  --hover: rgba(0, 0, 0, 0.05);
+  --active: rgba(0, 0, 0, 0.1);
+  --danger: #FF3B30;
+  --success: #34C759;
+  --warning: #FF9500;
+  --modal-overlay: rgba(0, 0, 0, 0.3);
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  user-select: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Toolbar - macOS Style */
+#toolbar {
+  height: 52px;
+  background: var(--bg-toolbar);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid var(--separator);
+  display: flex;
+  align-items: center;
+  padding: 0 var(--space-md) 0 80px; /* Extra left padding for macOS window controls */
+  gap: var(--space-sm);
+  flex-shrink: 0;
+  -webkit-app-region: drag; /* Make toolbar draggable */
+}
+
+#toolbar-spacer {
+  flex: 1;
+}
+
+#toolbar button {
+  height: 28px;
+  padding: 0 var(--space-md);
+  background: var(--hover);
+  color: var(--text-primary);
+  border: 0.5px solid var(--border);
+  border-radius: var(--radius-md);
+  font-size: 13px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+  -webkit-app-region: no-drag; /* Make buttons clickable */
+}
+
+#toolbar button:hover {
+  background: var(--active);
+  border-color: var(--border);
+}
+
+#toolbar button:active {
+  transform: scale(0.98);
+}
+
+/* Tab Bar - macOS Style */
+#tab-bar {
+  height: 40px;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--separator);
+  display: flex;
+  align-items: center;
+  padding: 0 var(--space-sm);
+  gap: var(--space-xs);
+  overflow-x: auto;
+  overflow-y: hidden;
+  flex-shrink: 0;
+}
+
+#tab-bar::-webkit-scrollbar {
+  height: 0;
+}
+
+.tab {
+  height: 28px;
+  min-width: 120px;
+  max-width: 200px;
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-md);
+  padding: 0 var(--space-md);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  position: relative;
+}
+
+.tab:hover {
+  background: var(--hover);
+}
+
+.tab.active {
+  background: var(--bg-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.tab-title {
+  flex: 1;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--text-secondary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: left;
+}
+
+.tab.active .tab-title {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.tab-close {
+  width: 16px;
+  height: 16px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: var(--text-tertiary);
+  opacity: 0;
+  transition: all 0.15s ease;
+}
+
+.tab:hover .tab-close {
+  opacity: 1;
+}
+
+.tab-close:hover {
+  background: var(--hover);
+  color: var(--text-secondary);
+}
+
+#btn-add-terminal,
+#btn-add-claude {
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#btn-add-terminal:hover,
+#btn-add-claude:hover {
+  background: var(--hover);
+  color: var(--text-primary);
+}
+
+/* Terminal Container */
+#terminal-container {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-primary);
+}
+
+.terminal-wrapper {
+  width: 100%;
+  height: 100%;
+  display: none;
+  padding: var(--space-md);
+}
+
+.terminal-wrapper.active {
+  display: block;
+}
+
+/* Tab Rename Input */
+.tab-rename-input {
+  flex: 1;
+  background: var(--bg-primary);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius-sm);
+  padding: 2px var(--space-sm);
+  font-size: 13px;
+  color: var(--text-primary);
+  outline: none;
+}
+
+/* Settings Modal - macOS Style */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--modal-overlay);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 0.2s ease;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-content {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-lg);
+  width: 400px;
+  box-shadow: var(--shadow-lg);
+}
+
+.modal-content h3 {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--space-md);
+}
+
+.modal-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-xs);
+}
+
+.modal-content input {
+  width: 100%;
+  padding: var(--space-sm) var(--space-md);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  font-size: 13px;
+  outline: none;
+  margin-bottom: var(--space-md);
+  transition: border-color 0.15s ease;
+}
+
+.modal-content input:focus {
+  border-color: var(--accent);
+}
+
+.modal-buttons {
+  display: flex;
+  gap: var(--space-sm);
+  margin-top: var(--space-sm);
+}
+
+.modal-buttons button {
+  flex: 1;
+  height: 32px;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.modal-buttons button:hover {
+  background: var(--accent-hover);
+}
+
+.modal-buttons button:active {
+  transform: scale(0.98);
+}
+
+.modal-buttons .btn-secondary {
+  background: var(--hover);
+  color: var(--text-primary);
+  border: 0.5px solid var(--border);
+}
+
+.modal-buttons .btn-secondary:hover {
+  background: var(--active);
+}
+
+/* Scroll to Bottom Button - macOS Style */
+.scroll-bottom-btn {
+  position: fixed;
+  bottom: var(--space-lg);
+  right: var(--space-lg);
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  background: var(--bg-toolbar);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  color: var(--text-primary);
+  border: 0.5px solid var(--border);
+  font-size: 18px;
+  font-weight: 300;
+  cursor: pointer;
+  box-shadow: var(--shadow-md);
+  z-index: 1000;
+  display: none;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  line-height: 34px;
+  text-align: center;
+}
+
+.scroll-bottom-btn:hover {
+  background: var(--active);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.scroll-bottom-btn:active {
+  transform: translateY(0) scale(0.95);
+}
+
+.scroll-bottom-btn.visible {
+  display: block;
+  animation: fadeInUp 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Analyzing Animation */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.tab-title.analyzing {
+  animation: pulse 1.2s ease-in-out infinite;
+  color: var(--accent);
+}

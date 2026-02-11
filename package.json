@@ -1,0 +1,42 @@
+{
+  "name": "dontbeterm",
+  "version": "1.1.0",
+  "description": "Claude Code multi-session manager with smart tab naming",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "rebuild": "electron-rebuild",
+    "postinstall": "electron-rebuild",
+    "dist": "electron-builder --mac"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.74.0",
+    "node-pty": "^1.0.0",
+    "xterm": "^5.3.0",
+    "xterm-addon-fit": "^0.8.0"
+  },
+  "devDependencies": {
+    "@electron/rebuild": "^4.0.0",
+    "electron": "^33.0.0",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "com.dontbeterm.app",
+    "productName": "DontbeTerm",
+    "mac": {
+      "category": "public.app-category.developer-tools",
+      "target": "dmg",
+      "icon": "build/icon.icns"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "renderer/**/*",
+      "lib/**/*",
+      "node_modules/**/*"
+    ],
+    "extraMetadata": {
+      "main": "main.js"
+    }
+  }
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'">
+  <title>DontbeTerm</title>
+  <link rel="stylesheet" href="../node_modules/xterm/css/xterm.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Toolbar -->
+  <div id="toolbar">
+    <button id="btn-refresh">刷新主题</button>
+    <button id="btn-copy-logs" title="复制调试日志">复制日志</button>
+    <div id="toolbar-spacer"></div>
+    <button id="btn-theme" title="切换日间/夜间模式">日间模式</button>
+    <button id="btn-settings" title="API 设置">设置</button>
+  </div>
+
+  <!-- Tab Bar -->
+  <div id="tab-bar">
+    <button id="btn-add-terminal" title="新建终端">+</button>
+    <button id="btn-add-claude" title="新建 Claude">C+</button>
+  </div>
+
+  <!-- Terminal Container -->
+  <div id="terminal-container"></div>
+
+  <!-- Scroll to Bottom Button -->
+  <button id="btn-scroll-bottom" class="scroll-bottom-btn" title="滚动到底部">↓</button>
+
+  <!-- Settings Modal -->
+  <div id="settings-modal" class="modal hidden">
+    <div class="modal-content">
+      <h3>API 设置</h3>
+      <label class="modal-label">Base URL</label>
+      <input type="text" id="settings-base-url" placeholder="https://api.anthropic.com">
+      <label class="modal-label">API Key</label>
+      <input type="password" id="settings-api-key" placeholder="sk-...">
+      <div class="modal-buttons">
+        <button id="btn-settings-save">保存</button>
+        <button id="btn-settings-cancel" class="btn-secondary">取消</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../node_modules/xterm/lib/xterm.js"></script>
+  <script src="../node_modules/xterm-addon-fit/lib/xterm-addon-fit.js"></script>
+  <script src="terminal.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

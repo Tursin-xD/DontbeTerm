@@ -4,6 +4,8 @@ node_modules/
 # Build outputs
 dist/
 release/
+build/
+lib/
 
 # macOS
 .DS_Store
@@ -19,3 +21,14 @@ npm-debug.log*
 # Environment variables
 .env
 .env.local
+
+# Claude Code
+.claude/
+
+# Documentation (internal)
+FEATURE_STATUS_REPORT.md
+IMPLEMENTATION_SUMMARY.md
+PROJECT_ARCHIVE.md
+TODO.md
+需求文档.md
+项目状态.md
