@@ -50,7 +50,14 @@ jobs:
 
       - name: Build for Windows
         if: matrix.platform == 'win'
-        run: npm run dist -- --win
+        run: npm run dist:win
+
+      - name: Create Windows portable version
+        if: matrix.platform == 'win'
+        shell: pwsh
+        run: |
+          $version = (Get-Content package.json | ConvertFrom-Json).version
+          Compress-Archive -Path "dist/win-unpacked/*" -DestinationPath "dist/DontbeTerm-$version-win-portable.zip"
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
@@ -91,17 +98,44 @@ jobs:
           body: |
             ## 版本 ${{ steps.get_version.outputs.VERSION }}
 
-            ### 下载
+            ### 📥 下载
 
-            - **macOS (Apple Silicon)**: DontbeTerm-${{ steps.get_version.outputs.VERSION }}-arm64.dmg
-            - **macOS (Intel)**: DontbeTerm-${{ steps.get_version.outputs.VERSION }}-x64.dmg
-            - **Windows**: DontbeTerm-${{ steps.get_version.outputs.VERSION }}-Setup.exe
+            #### macOS
+            - **Apple Silicon (M1/M2/M3)**: `DontbeTerm-${{ steps.get_version.outputs.VERSION }}-arm64.dmg`
+            - **Intel**: `DontbeTerm-${{ steps.get_version.outputs.VERSION }}-x64.dmg`
+
+            #### Windows
+            - **安装版**: `DontbeTerm-${{ steps.get_version.outputs.VERSION }}-Setup.exe`
+            - **便携版**: `DontbeTerm-${{ steps.get_version.outputs.VERSION }}-win-portable.zip`
+
+            ### 📖 安装说明
+
+            #### macOS 用户
+            下载 DMG 文件后，将应用拖到应用程序文件夹，然后在终端执行：
+            ```bash
+            xattr -cr /Applications/DontbeTerm.app
+            ```
+            这会移除隔离属性，允许应用运行。
+
+            #### Windows 用户
+            - **安装版**：双击 Setup.exe，如果提示 SmartScreen 警告，点击"更多信息" > "仍要运行"
+            - **便携版**：解压 zip 文件，直接运行 DontbeTerm.exe
+
+            ### ⚠️ 安全说明
+            应用目前未签名，这是因为代码签名证书需要年费。但应用是完全开源的，你可以：
+            - 查看完整源代码
+            - 查看 GitHub Actions 构建日志
+            - 自己从源代码构建
+
+            ### 📚 详细安装指南
+            查看 [INSTALLATION.md](https://github.com/${{ github.repository }}/blob/main/INSTALLATION.md) 了解详细的安装步骤和常见问题解决方案。
 
             ---
             🤖 由 GitHub Actions 自动构建
           files: |
             artifacts/**/*.dmg
             artifacts/**/*.exe
+            artifacts/**/*.zip
           draft: false
           prerelease: false
         env:

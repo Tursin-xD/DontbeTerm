@@ -310,25 +310,28 @@ body {
 }
 
 #btn-add-terminal,
-#btn-add-claude {
-  width: 28px;
+#btn-add-claude,
+#btn-add-happy {
   height: 28px;
   min-width: 28px;
+  padding: 0 var(--space-md);
   background: transparent;
   border: none;
   border-radius: var(--radius-md);
-  font-size: 16px;
-  font-weight: 300;
+  font-size: 13px;
+  font-weight: 400;
   color: var(--text-secondary);
   cursor: pointer;
   transition: all 0.15s ease;
   display: flex;
   align-items: center;
   justify-content: center;
+  white-space: nowrap;
 }
 
 #btn-add-terminal:hover,
-#btn-add-claude:hover {
+#btn-add-claude:hover,
+#btn-add-happy:hover {
   background: var(--hover);
   color: var(--text-primary);
 }

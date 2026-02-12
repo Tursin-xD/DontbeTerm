@@ -1,16 +1,15 @@
 {
   "name": "dontbeterm",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Claude Code multi-session manager with smart tab naming",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
     "rebuild": "electron-rebuild",
-    "postinstall": "electron-rebuild",
-    "dist": "electron-builder",
-    "dist:mac": "electron-builder --mac",
-    "dist:win": "electron-builder --win",
-    "dist:all": "electron-builder --mac --win"
+    "dist": "electron-builder --config.npmRebuild=false",
+    "dist:mac": "electron-builder --mac --config.npmRebuild=false",
+    "dist:win": "electron-builder --win --config.npmRebuild=false",
+    "dist:all": "electron-builder --mac --win --config.npmRebuild=false"
   },
   "dependencies": {
     "node-pty": "^1.0.0",

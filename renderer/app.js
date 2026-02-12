@@ -72,11 +72,13 @@ let activeTabId = null;
 const tabBar = document.getElementById('tab-bar');
 const btnAddTerminal = document.getElementById('btn-add-terminal');
 const btnAddClaude = document.getElementById('btn-add-claude');
+const btnAddHappy = document.getElementById('btn-add-happy');
 const terminalContainer = document.getElementById('terminal-container');
 const btnRefresh = document.getElementById('btn-refresh');
 const btnCopyLogs = document.getElementById('btn-copy-logs');
 const btnClaudeCommands = document.getElementById('btn-claude-commands');
 const claudeCommandsMenu = document.getElementById('claude-commands-menu');
+const btnScrollToBottom = document.getElementById('btn-scroll-to-bottom');
 const btnTheme = document.getElementById('btn-theme');
 const btnScrollBottom = document.getElementById('btn-scroll-bottom');
 
@@ -287,16 +289,30 @@ function updateTabTitle(tabId, title, analyzing) {
 const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
 let isLight = !prefersDark.matches; // Start with system preference
 
+console.log('System theme detection:', {
+  prefersDark: prefersDark.matches,
+  isLight: isLight
+});
+
 function toggleTheme() {
   isLight = !isLight;
-  document.body.classList.toggle('light', isLight);
+  if (isLight) {
+    document.body.classList.add('light');
+  } else {
+    document.body.classList.remove('light');
+  }
   btnTheme.textContent = isLight ? '夜间模式' : '日间模式';
   terminalManager.setLightMode(isLight);
 }
 
 // Initialize theme based on system preference
 function initTheme() {
-  document.body.classList.toggle('light', isLight);
+  console.log('Initializing theme with isLight:', isLight);
+  if (isLight) {
+    document.body.classList.add('light');
+  } else {
+    document.body.classList.remove('light');
+  }
   btnTheme.textContent = isLight ? '夜间模式' : '日间模式';
   terminalManager.setLightMode(isLight);
 }
@@ -433,6 +449,7 @@ console.log('Shortcut listeners set up complete');
 
 btnAddTerminal.addEventListener('click', () => createNewTab());
 btnAddClaude.addEventListener('click', () => createNewTab('claude'));
+btnAddHappy.addEventListener('click', () => createNewTab('happy'));
 btnRefresh.addEventListener('click', () => refreshAllTopics());
 btnCopyLogs.addEventListener('click', () => copyLogsToClipboard());
 btnClaudeCommands.addEventListener('click', (e) => {
@@ -440,6 +457,14 @@ btnClaudeCommands.addEventListener('click', (e) => {
   toggleClaudeCommandsMenu();
 });
 btnTheme.addEventListener('click', () => toggleTheme());
+
+// Toolbar scroll to bottom button
+btnScrollToBottom.addEventListener('click', () => {
+  console.log('Toolbar scroll to bottom clicked');
+  if (activeTabId) {
+    terminalManager.scrollToBottom(activeTabId);
+  }
+});
 
 // Claude commands menu items
 document.querySelectorAll('.commands-menu-item').forEach(item => {
@@ -456,10 +481,6 @@ btnScrollBottom.addEventListener('click', () => {
     terminalManager.scrollToBottom(activeTabId);
     btnScrollBottom.classList.remove('visible');
   }
-});
-
-settingsModal.addEventListener('click', (e) => {
-  if (e.target === settingsModal) closeSettings();
 });
 
 // Auto-show scroll button when terminal has scrollback

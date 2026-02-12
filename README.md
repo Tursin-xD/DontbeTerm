@@ -18,31 +18,37 @@ DontbeTerm 让你同时运行多个 Claude Code 会话，并通过 AI 自动识�
 
 ## 下载
 
-| 平台 | 下载 |
+前往 [Releases 页面](https://github.com/dontbesilent2025/DontbeTerm/releases/latest) 下载最新版本。
+
+| 平台 | 文件 |
 |------|------|
-| macOS (Apple Silicon / M系列芯片) | [DontbeTerm-Mac-AppleSilicon.dmg](https://github.com/dontbesilent2025/DontbeTerm/releases/latest) |
-| macOS (Intel) | [DontbeTerm-Mac-Intel.dmg](https://github.com/dontbesilent2025/DontbeTerm/releases/latest) |
-| Windows | [DontbeTerm-Windows-Setup.exe](https://github.com/dontbesilent2025/DontbeTerm/releases/latest) |
+| macOS (Apple Silicon) | `DontbeTerm-x.x.x-arm64.dmg` |
+| macOS (Intel) | `DontbeTerm-x.x.x-x64.dmg` |
+| Windows (安装版) | `DontbeTerm-x.x.x-Setup.exe` |
+| Windows (便携版) | `DontbeTerm-x.x.x-win-portable.zip` |
 
-## 使用说明
+## 安装
 
-### 1. 安装
+### macOS
 
-- **macOS**：打开 `.dmg` 文件，将 DontbeTerm 拖入"应用程序"文件夹。首次打开时，右键点击应用选择"打开"（未签名应用需要此操作）。
-- **Windows**：运行 `.exe` 安装程序。
+1. 下载对应的 DMG 文件
+2. 打开 DMG，将应用拖到应用程序文件夹
+3. 在终端执行：
+   ```bash
+   xattr -cr /Applications/DontbeTerm.app
+   ```
+   或者下载并运行 [install-macos.sh](install-macos.sh) 脚本
 
-### 2. 配置 API（用于智能标签命名）
+**详细说明**：查看 [INSTALLATION.md](INSTALLATION.md)
 
-首次启动时会弹出设置窗口，请填写：
+### Windows
 
-- **Base URL**：你的 Claude API 地址（例如 `https://api.anthropic.com`）
-- **API Key**：你的 API 密钥
+- **安装版**：双击 Setup.exe，按提示安装
+- **便携版**：解压 zip 文件，直接运行 DontbeTerm.exe
 
-之后也可以通过工具栏的"设置"按钮修改。
+如遇到 SmartScreen 警告，点击"更多信息" > "仍要运行"
 
-> API 仅用于标签自动命名功能（使用 claude-3-5-haiku 模型）。每次命名约花费 $0.001。终端和 Claude Code 会话使用你本地的 `claude` CLI，与此 API 无关。
-
-### 3. 使用
+**详细说明**：查看 [INSTALLATION.md](INSTALLATION.md)
 
 - 点击 **`C+`** — 新建 Claude Code 会话（会弹出 Finder 选择工作目录）
 - 点击 **`+`** — 新建普通终端
