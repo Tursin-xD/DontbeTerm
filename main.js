@@ -154,7 +154,7 @@ ipcMain.handle('claude-cli:check', async () => {
 });
 
 ipcMain.handle('claude-cli:status', () => {
-  return claudeCliStatus || claudeCliChecker.getClaudeCliStatus();
+  return claudeCliStatus || { available: false, version: null, error: 'Not checked yet' };
 });
 
 ipcMain.handle('claude-cli:test', async () => {
