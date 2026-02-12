@@ -1,6 +1,6 @@
 {
   "name": "dontbeterm",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Claude Code multi-session manager with smart tab naming",
   "main": "main.js",
   "scripts": {
@@ -51,10 +51,10 @@
           "x": 270,
           "y": 380,
           "type": "file",
-          "path": "build/安装 DontbeTerm.command"
+          "path": "build/Install DontbeTerm.command"
         }
       ],
-      "title": "安装 ${productName}",
+      "title": "Install ${productName}",
       "background": null
     },
     "win": {
