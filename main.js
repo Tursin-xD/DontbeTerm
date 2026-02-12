@@ -389,6 +389,26 @@ function buildMenu() {
 // --- App lifecycle ---
 
 app.whenReady().then(async () => {
+  // 修复打包后应用的 PATH 问题
+  // 添加常见的 Homebrew 和用户路径
+  const additionalPaths = [
+    '/opt/homebrew/bin',
+    '/usr/local/bin',
+    '/usr/bin',
+    '/bin',
+    '/usr/sbin',
+    '/sbin',
+    process.env.HOME + '/.local/bin'
+  ];
+
+  const currentPath = process.env.PATH || '';
+  const pathsToAdd = additionalPaths.filter(p => !currentPath.includes(p));
+
+  if (pathsToAdd.length > 0) {
+    process.env.PATH = [...pathsToAdd, currentPath].join(':');
+    console.log('[Main] Updated PATH:', process.env.PATH);
+  }
+
   // Check Claude CLI availability on startup
   console.log('[Main] Checking Claude CLI availability...');
   claudeCliStatus = await claudeCliChecker.checkClaudeCli();
